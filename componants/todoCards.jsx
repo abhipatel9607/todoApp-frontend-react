@@ -20,6 +20,9 @@ function Todo(props) {
       description: prompt(`Please enter a New Title:`),
       status: "Not Done",
     };
+    if (editTodo.title == "" || editTodo.description == "") {
+      alert("Please fill the Input with some Data");
+    }
     fetch(`https://todoappmy.glitch.me/todos/${todo.id}`, {
       method: "PUT",
       body: JSON.stringify(editTodo),
